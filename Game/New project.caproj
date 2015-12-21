@@ -176,6 +176,9 @@
         <object-type name="Mouse" sid="9133895304927735">
             <plugin id="Mouse" />
         </object-type>
+        <object-type name="GameOverScreen" sid="9195078569892127">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
