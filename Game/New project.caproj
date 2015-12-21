@@ -14,11 +14,11 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
@@ -47,12 +47,18 @@
     <object-folder>
         <object-type name="Player" sid="500292441761731">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Player Damage" name="Damage" sid="4821588791047399" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="BoundToLayout" sid="9656338442572465">
                     <behavior id="bound" />
                 </behavior-type>
                 <behavior-type name="8Direction" sid="1878511039355957">
                     <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="8220021796256045">
+                    <behavior id="Timer" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -96,9 +102,6 @@
                     </frame>
                 </animation>
             </animation-folder>
-        </object-type>
-        <object-type name="Touch" sid="1345518812642463">
-            <plugin id="Touch" />
         </object-type>
         <object-type name="Enemy" sid="1705739699570545">
             <plugin id="Sprite" />
@@ -148,9 +151,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Text" sid="5760741926227019">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="Star" sid="1038467425692926">
             <plugin id="Sprite" />
             <behaviors>
@@ -167,7 +167,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Scoreboard" sid="3692735307786932">
+        <object-type name="Score" sid="3692735307786932">
             <plugin id="Text" />
         </object-type>
         <object-type name="Keyboard" sid="4305012325895273">
@@ -179,20 +179,47 @@
         <object-type name="GameOverScreen" sid="9195078569892127">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Sprite" sid="2860852446614531">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6655708982977831" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuText" sid="702544611074411">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BonusDamage" sid="3953927338710702">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="3765982816523978">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="7895054064371358">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7205065472045465" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\shogu_000\Desktop\GameDev Workspace\SpaceShooter.git\trunk\789_Lorc_RPG_icons\Icon.2_27.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TimerString" sid="4266320813086681">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Home Screen.xml</layout>
+        <layout>Game.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Game Event Sheet.xml</event-sheet>
+        <event-sheet>Home Screen Event Sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Touch" uid="6">
-            <properties>
-                <use-mouse-input>Yes</use-mouse-input>
-            </properties>
-        </global-instance>
         <global-instance type="Keyboard" uid="8" />
         <global-instance type="Mouse" uid="9" />
     </global-instances>

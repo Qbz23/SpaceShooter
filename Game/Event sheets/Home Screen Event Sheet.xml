@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Home Screen Event Sheet</name>
+    <events>
+        <event-block sid="9317795017480546">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6120462328192051" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8495528163587319" type="Star" />
+            </actions>
+        </event-block>
+        <comment>Create 50 random stars with different speeds and sizes on startup to create a space background effect.  The stars have a wrap behavior which keeps them on-screen.</comment>
+        <event-block sid="7978106323619076">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4584762669573794" type="System" />
+                <condition id="-12" name="Repeat" sid="7381073233832529" type="System">
+                    <param id="0" name="Count">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="6816979358468205" type="System">
+                    <param id="0" name="Object to create">Star</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">random(LayoutHeight)</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="7368048535370895" type="Star">
+                    <param id="0" name="Speed">random(10, 80)</param>
+                </action>
+                <action id="9" name="Set scale" sid="6501778184493513" type="Star">
+                    <param id="0" name="Scale">Self.Bullet.Speed / 250</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="7967464392272853" type="Star">
+                    <param id="0" name="Opacity">Self.Bullet.Speed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7373518479231528">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="141752227906268" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="6884446435914898" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
