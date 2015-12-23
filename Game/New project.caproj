@@ -10,6 +10,7 @@
     <unique-id>2ajxfw52ycy8u</unique-id>
     <saved-with-version>21600</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -20,6 +21,7 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
@@ -179,11 +181,31 @@
         <object-type name="GameOverScreen" sid="9195078569892127">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Sprite" sid="2860852446614531">
+        <object-type name="SuicideEnemy" sid="2860852446614531">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Whether or not this unit is attacking" name="Attacking" sid="8240568575211149" type="boolean" />
+                <instance-variable comment="For AI logic" name="EnemyID" sid="4204574252836145" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="3992662558916706">
+                    <behavior id="custom" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6655708982977831" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502222" original-source="C:\Users\Qbz\Documents\SpaceShooter\Premade Ships\11.png">
+                        <collision-poly>
+                            <point x="0.183417" y="0.324444" />
+                            <point x="0.5" y="0" />
+                            <point x="0.816583" y="0.324444" />
+                            <point x="0.864322" y="0.497778" />
+                            <point x="0.763819" y="0.582222" />
+                            <point x="0.5" y="0.937778" />
+                            <point x="0.236181" y="0.582222" />
+                            <point x="0.135678" y="0.497778" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -209,6 +231,9 @@
         <object-type name="TimerString" sid="4266320813086681">
             <plugin id="Text" />
         </object-type>
+        <object-type global="1" name="SuicideEnemies" sid="3456368179922428">
+            <plugin id="Arr" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -218,6 +243,7 @@
     <event-folder>
         <event-sheet>Game Event Sheet.xml</event-sheet>
         <event-sheet>Home Screen Event Sheet.xml</event-sheet>
+        <event-sheet>SuicideAI.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="8" />

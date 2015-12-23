@@ -14,6 +14,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="2">Home Screen</layout>
         <event-sheet active="1" order="1">Game Event Sheet</event-sheet>
         <event-sheet order="3">Home Screen Event Sheet</event-sheet>
+        <event-sheet order="4">SuicideAI</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -35,7 +36,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Enemy/" />
         <folder expanded="1" path="animation-folder/EnemyBullet/" />
         <folder expanded="1" path="animation-folder/Star/" />
-        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/SuicideEnemy/" />
         <folder expanded="1" path="animation-folder/BonusDamage/" />
     </folders-expanded>
 </c2uistate>
