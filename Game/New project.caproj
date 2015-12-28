@@ -243,7 +243,12 @@
     <event-folder>
         <event-sheet>Game Event Sheet.xml</event-sheet>
         <event-sheet>Home Screen Event Sheet.xml</event-sheet>
+<<<<<<< .mine
+        <event-sheet>Player Control.xml</event-sheet>
+||||||| .r4
+=======
         <event-sheet>SuicideAI.xml</event-sheet>
+>>>>>>> .r5
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="8" />

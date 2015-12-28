@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Player Control</name>
+    <events>
+        <event-block sid="2591518612512837">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="513673729133086" type="System" />
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="7264907476342347" type="Player">
+                    <param id="0" name="Angle">-90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4651161332010865">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3542375646526171" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="9662687724916968" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6044870672141212">
+            <conditions>
+                <condition id="2" name="Key is down" sid="4726793751007592" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="5120352881994028" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6970126245700949">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3701379711632192" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="5622841370514654" type="Player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8136485531761559">
+            <conditions>
+                <condition id="2" name="Key is down" sid="8867749651043415" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="6473004041657892" type="Player">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9181423861421662">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="55609241493948" type="Bullet">
+                    <param id="0" name="Object">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="2667922937895099" type="Enemy">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">Player.Damage</param>
+                </action>
+                <action id="-9" name="Destroy" sid="9088386079393953" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="2187815475991962">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="7942923959969097" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="5520014070509642" type="System">
+                    <param id="0" name="Interval (seconds)">0.2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="7735760506108584" type="Player">
+                    <param id="0" name="Object">Bullet</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="729308191955072">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="2058458085170586" type="Keyboard">
+                    <param id="0" name="Key">82 (R)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1838429043412721" type="System">
+                    <param id="0" name="Variable">hasLost</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="6687206833059803" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="6830427429895136" type="System">
+                    <param id="0" name="Variable">hasLost</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="9698598038288752" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9878681100925846">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="5488976318377182" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1517538726525398" type="System">
+                    <param id="0" name="Variable">hasLost</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="854599246969804" type="System">
+                    <param id="0" name="Layout">Home Screen</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
