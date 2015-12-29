@@ -68,10 +68,6 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-12" name="Subtract from" sid="2667922937895099" type="Enemy">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">Player.Damage</param>
-                </action>
                 <action id="-9" name="Destroy" sid="9088386079393953" type="Bullet" />
             </actions>
         </event-block>

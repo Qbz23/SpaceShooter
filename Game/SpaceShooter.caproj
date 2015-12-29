@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>SpaceShooter</name>
+    <description></description>
+    <version>1.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>2ajxfw52ycy8u</unique-id>
+    <saved-with-version>21600</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="tint">Tint</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>480</width>
+        <height>640</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Player" sid="500292441761731">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Player Damage" name="Damage" sid="4821588791047399" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="9656338442572465">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="1878511039355957">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="8220021796256045">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7283974928920558" speed="5">
+                    <frame duration="1" hotspotX="0.673367" hotspotY="0.5" original-source="C:\Users\shogu_000\Desktop\GameDev Workspace\SpaceShooter.git\trunk\Premade Ships\2.png">
+                        <image-point name="Imagepoint 1" x="1.00503" y="0.5" />
+                        <collision-poly>
+                            <point x="0.820896" y="1" />
+                            <point x="0.208955" y="1" />
+                            <point x="0" y="0.582915" />
+                            <point x="0.100746" y="0.197237" />
+                            <point x="0.27612" y="0.0778895" />
+                            <point x="0.507463" y="0" />
+                            <point x="0.712687" y="0.0565318" />
+                            <point x="0.865672" y="0.164886" />
+                            <point x="1" y="0.454302" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bullet" sid="3782954767607777">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="3799313628589591">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="7103529443784324">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5423827915549711" speed="5">
+                    <frame duration="1" hotspotX="0.533333" hotspotY="0.571429">
+                        <collision-poly>
+                            <point x="0.0666667" y="0.142857" />
+                            <point x="0.933333" y="0.142857" />
+                            <point x="0.933333" y="0.857143" />
+                            <point x="0.0666667" y="0.857143" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Enemy" sid="1705739699570545">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="7243300966558883">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4462336345363673" speed="5">
+                    <frame duration="1" hotspotX="0.656863" hotspotY="0.5" original-source="C:\Users\shogu_000\Desktop\GameDev Workspace\SpaceShooter.git\trunk\Premade Ships\6B.png">
+                        <image-point name="Imagepoint 1" x="1.0098" y="0.5" />
+                        <collision-poly>
+                            <point x="0.666666" y="0.0470588" />
+                            <point x="1" y="0.494116" />
+                            <point x="0.652942" y="0.949019" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EnemyBullet" sid="4623102266206313">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="6321031060507834">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="6687672904289309">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7220130074915459" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.6">
+                        <collision-poly>
+                            <point x="0.916667" y="0.2" />
+                            <point x="0.916667" y="0.8" />
+                            <point x="0.0833333" y="0.8" />
+                            <point x="0.0833333" y="0.2" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Star" sid="1038467425692926">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="5994392694455685">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="2392165371995633">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9608778229859068" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Score" sid="3692735307786932">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Keyboard" sid="4305012325895273">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse" sid="9133895304927735">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="GameOverScreen" sid="9195078569892127">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SuicideEnemy" sid="2860852446614531">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="For AI logic" name="EnemyID" sid="4204574252836145" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="1622192034273724">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6655708982977831" speed="5">
+                    <frame duration="1" hotspotX="0.502222" hotspotY="0.5" original-source="C:\Users\Qbz\Documents\SpaceShooter\Premade Ships\11.png">
+                        <collision-poly>
+                            <point x="0.324444" y="0.816583" />
+                            <point x="0" y="0.5" />
+                            <point x="0.324444" y="0.183417" />
+                            <point x="0.497778" y="0.135678" />
+                            <point x="0.582222" y="0.236181" />
+                            <point x="0.937778" y="0.5" />
+                            <point x="0.582222" y="0.763819" />
+                            <point x="0.497778" y="0.864322" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MenuText" sid="702544611074411">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BonusDamage" sid="3953927338710702">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="3765982816523978">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="7895054064371358">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7205065472045465" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\shogu_000\Desktop\GameDev Workspace\SpaceShooter.git\trunk\789_Lorc_RPG_icons\Icon.2_27.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TimerString" sid="4266320813086681">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="SuicideEnemies" sid="3456368179922428">
+            <plugin id="Arr" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="Enemies" plugin-id="Sprite" sid="7646709950686107">
+            <members>
+                <member>Enemy</member>
+                <member>SuicideEnemy</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="The amount of Health an Enemy has1" name="Health" sid="6979612084018606" type="number" />
+                <instance-variable name="TintFrameCounter" sid="5859562172401079" type="number" />
+            </instance-variables>
+            <effects>
+                <effect-type name="Tint">
+                    <effect id="tint" />
+                </effect-type>
+            </effects>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Home Screen.xml</layout>
+        <layout>Game.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Game Event Sheet.xml</event-sheet>
+        <event-sheet>Home Screen Event Sheet.xml</event-sheet>
+        <event-sheet>Player Control.xml</event-sheet>
+        <event-sheet>EnemySpawner.xml</event-sheet>
+        <event-sheet>CoreEnemyLogic.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="8" />
+        <global-instance type="Mouse" uid="9" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

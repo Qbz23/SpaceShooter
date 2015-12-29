@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event Sheet</name>
     <events>
+        <include>CoreEnemyLogic</include>
+        <include>EnemySpawner</include>
         <include>Player Control</include>
         <variable comment="timer var for powerups" constant="0" name="timer" sid="6274072217486279" static="0" type="number">0</variable>
         <variable comment="Has the user lost " constant="0" name="hasLost" sid="4141205332970327" static="0" type="number">0</variable>
@@ -56,22 +58,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="1636278776303564">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="1151472552241251" type="Enemy">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="1877616127684042" type="Enemy" />
-                <action id="-10" name="Add to" sid="3356356705235158" type="System">
-                    <param id="0" name="Variable">Score</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
         <comment>If an enemy bullet hits the player, just destroy the bullet.  TODO: player health!</comment>
         <event-block sid="123965707670289">
             <conditions>
@@ -89,19 +75,6 @@
                 <action id="-15" name="Set visible" sid="4031918861626134" type="GameOverScreen">
                     <param id="0" name="Visibility">1</param>
                 </action>
-            </actions>
-        </event-block>
-        <comment>Destroy any enemies which make it to the bottom of the screen and leave the layout.</comment>
-        <event-block sid="5061256045516616">
-            <conditions>
-                <condition id="-2" name="Compare Y" sid="9486339968351128" type="Enemy">
-                    <param id="0" name="Comparison">5</param>
-                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
-                </condition>
-                <condition id="-4" name="Is outside layout" sid="6365765957651983" type="Enemy" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="8525782206580286" type="Enemy" />
             </actions>
         </event-block>
         <comment>Destroy the initial star object in the layout.</comment>

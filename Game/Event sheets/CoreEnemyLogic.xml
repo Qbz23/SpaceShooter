@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CoreEnemyLogic</name>
+    <events>
+        <variable constant="1" name="TINTFRAMES" sid="8356978583110489" static="0" type="number">7</variable>
+        <comment>Reduce hp if hit by bullet and tint the enemy red</comment>
+        <event-block sid="1634238613596247">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1311894800638409" type="Bullet">
+                    <param id="0" name="Object">Enemies</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="9169470410069897" type="Enemies">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="632855598759049" type="Bullet" />
+                <action id="-10" name="Set value" sid="4235954868017999" type="Enemies">
+                    <param id="0" name="Instance variable">TintFrameCounter</param>
+                    <param id="1" name="Value">TINTFRAMES</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="2923455897723048" type="Enemies">
+                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                    <param id="1" name="Parameter index">1</param>
+                    <param id="2" name="Value">0</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="5206723906700703" type="Enemies">
+                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                    <param id="1" name="Parameter index">2</param>
+                    <param id="2" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Die if out of hp</comment>
+        <event-block sid="5546872019695141">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="2286363431990073" type="Enemies">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2336645641318472" type="Enemies" />
+                <action id="-10" name="Add to" sid="939554878630944" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Destroy if hit bottom of screen</comment>
+        <event-block sid="7081961307394557">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="5292472075266968" type="Enemies">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2429428841619542" type="Enemies" />
+            </actions>
+        </event-block>
+        <comment>Checks if it should un-tint the enemy</comment>
+        <event-block sid="9364267589241924">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5442931031112421" type="Enemies">
+                    <param id="0" name="Instance variable">TintFrameCounter</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="1560000839480914" type="Enemies">
+                    <param id="0" name="Instance variable">TintFrameCounter</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5184591887838179">
+            <conditions>
+                <condition id="-22" name="Else" sid="3163787697187303" type="System" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set effect parameter" sid="2990107541650427" type="Enemies">
+                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                    <param id="1" name="Parameter index">1</param>
+                    <param id="2" name="Value">100</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="9161602081253897" type="Enemies">
+                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                    <param id="1" name="Parameter index">2</param>
+                    <param id="2" name="Value">100</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
