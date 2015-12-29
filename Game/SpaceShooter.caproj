@@ -10,7 +10,6 @@
     <unique-id>2ajxfw52ycy8u</unique-id>
     <saved-with-version>21600</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -182,10 +181,10 @@
         <object-type name="SuicideEnemy" sid="2860852446614531">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable comment="For AI logic" name="EnemyID" sid="4204574252836145" type="number" />
+                <instance-variable name="PlayerDistance" sid="2132392770971893" type="number" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="Bullet" sid="1622192034273724">
+                <behavior-type name="Bullet" sid="3183195465177491">
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
@@ -228,9 +227,6 @@
         <object-type name="TimerString" sid="4266320813086681">
             <plugin id="Text" />
         </object-type>
-        <object-type global="1" name="SuicideEnemies" sid="3456368179922428">
-            <plugin id="Arr" />
-        </object-type>
     </object-folder>
     <families>
         <family name="Enemies" plugin-id="Sprite" sid="7646709950686107">
@@ -259,6 +255,8 @@
         <event-sheet>Player Control.xml</event-sheet>
         <event-sheet>EnemySpawner.xml</event-sheet>
         <event-sheet>CoreEnemyLogic.xml</event-sheet>
+        <event-sheet>SuicideEnemyLogic.xml</event-sheet>
+        <event-sheet>GameState.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="8" />

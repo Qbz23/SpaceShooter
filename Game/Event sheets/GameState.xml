@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameState</name>
+    <events>
+        <event-block sid="1082416915842379">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3082036700636068" type="System" />
+                <condition id="-14" name="Compare variable" sid="9165692503745924" type="System">
+                    <param id="0" name="Variable">hasLost</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6369486189628467" type="Player" />
+                <action id="-15" name="Set visible" sid="5771390146500168" type="GameOverScreen">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4373760959742832">
+            <conditions />
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

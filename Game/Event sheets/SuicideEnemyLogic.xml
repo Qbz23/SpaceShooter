@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>SuicideEnemyLogic</name>
+    <events>
+        <variable comment="The speed it charges at while attacking" constant="1" name="ATTACKSPEED" sid="1888428212674283" static="0" type="number">225</variable>
+        <variable comment="The Y coordinate at which the enemy will attack" constant="1" name="ATTACKY" sid="4822976500749774" static="0" type="number">300</variable>
+        <variable comment="Distance from which suicide will attack player" constant="1" name="ACQUIREDISTANCE" sid="5436468256951225" static="0" type="number">250</variable>
+        <comment>If it collides with player, gg</comment>
+        <event-block sid="4321503055627832">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="159315152659909" type="SuicideEnemy">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1659239673164353" type="SuicideEnemy" />
+                <action id="-9" name="Set value" sid="7785685163480684" type="System">
+                    <param id="0" name="Variable">hasLost</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>For some reason If i just check the distance, it doesnt work. no idea why, so save it here</comment>
+        <event-block sid="5468260423961993">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7601345122856148" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="5761588184093651" type="SuicideEnemy">
+                    <param id="0" name="Instance variable">PlayerDistance</param>
+                    <param id="1" name="Value">distance(SuicideEnemy.X, SuicideEnemy.Y, Player.X, Player.Y)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Charges the player if its far enough down the screen or its close enough</comment>
+        <event-block sid="4678309386897182">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4544089781331115" type="System">
+                    <param id="0" name="Variable">hasLost</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="5851833974005895">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="4849847104028363" type="SuicideEnemy">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">ATTACKY</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="221058005833388" type="SuicideEnemy">
+                            <param id="0" name="Instance variable">PlayerDistance</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">ACQUIREDISTANCE</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5632674015056619" type="SuicideEnemy">
+                            <param id="0" name="Angle">angle(SuicideEnemy.X, SuicideEnemy.Y, Player.X, Player.Y)</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="9403614871537398" type="SuicideEnemy">
+                            <param id="0" name="Speed">ATTACKSPEED</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

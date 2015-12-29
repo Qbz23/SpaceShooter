@@ -293,12 +293,12 @@
                     <instance-variables>
                         <Health>2</Health>
                         <TintFrameCounter>0</TintFrameCounter>
-                        <EnemyID>0</EnemyID>
+                        <PlayerDistance>999</PlayerDistance>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>40</speed>
+                                <speed>60</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
