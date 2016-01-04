@@ -48,6 +48,10 @@
                     <param id="0" name="Variable">Score</param>
                     <param id="1" name="Value">1</param>
                 </action>
+                <action id="-11" name="Subtract from" sid="4148780005398321" type="System">
+                    <param id="0" name="Variable">ActiveEnemies</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
         <comment>Destroy if hit bottom of screen</comment>
@@ -60,6 +64,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="2429428841619542" type="Enemies" />
+                <action id="-11" name="Subtract from" sid="3280459628747232" type="System">
+                    <param id="0" name="Variable">ActiveEnemies</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
         <comment>Checks if it should un-tint the enemy</comment>

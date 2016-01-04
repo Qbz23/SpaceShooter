@@ -236,7 +236,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Enemy" uid="0">
+                <instance type="RangedEnemy" uid="0">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -246,6 +246,7 @@
                     <instance-variables>
                         <Health>3</Health>
                         <TintFrameCounter>0</TintFrameCounter>
+                        <SpawnPointValue>2</SpawnPointValue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
@@ -293,6 +294,7 @@
                     <instance-variables>
                         <Health>2</Health>
                         <TintFrameCounter>0</TintFrameCounter>
+                        <SpawnPointValue>1</SpawnPointValue>
                         <PlayerDistance>999</PlayerDistance>
                     </instance-variables>
                     <behavior-instances>

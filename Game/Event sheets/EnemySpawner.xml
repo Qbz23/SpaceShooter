@@ -3,10 +3,18 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>EnemySpawner</name>
     <events>
+        <variable comment="How many enemies are alive" constant="0" name="ActiveEnemies" sid="9629352351093656" static="0" type="number">0</variable>
+        <variable comment='The amount of points that will &quot;beat&quot; the current level' constant="0" name="CurrentMaxPoints" sid="2477149632625031" static="0" type="number">50</variable>
+        <variable comment="The amount of points that have currently been spawned" constant="0" name="CurrentPoints" sid="9031894886326076" static="0" type="number">0</variable>
         <event-block sid="8063319815453146">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="6110763445965617" type="System">
                     <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8715967664146214" type="System">
+                    <param id="0" name="Variable">CurrentPoints</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">CurrentMaxPoints</param>
                 </condition>
             </conditions>
             <actions>
@@ -16,9 +24,33 @@
                     <param id="2" name="X">random(30, 450)</param>
                     <param id="3" name="Y">-20</param>
                 </action>
+                <action id="-10" name="Add to" sid="9456939816264972" type="System">
+                    <param id="0" name="Variable">CurrentPoints</param>
+                    <param id="1" name="Value">Enemies.SpawnPointValue</param>
+                </action>
+                <action id="-10" name="Add to" sid="3949831937861908" type="System">
+                    <param id="0" name="Variable">ActiveEnemies</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
-        <event-block sid="7669567984012567">
+        <comment>Next Level would go here</comment>
+        <event-block sid="5820428336535086">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6564140915880291" type="System">
+                    <param id="0" name="Variable">CurrentPoints</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">CurrentMaxPoints</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8985537891080001" type="System">
+                    <param id="0" name="Variable">ActiveEnemies</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="1251276509993153">
             <conditions />
             <actions />
         </event-block>

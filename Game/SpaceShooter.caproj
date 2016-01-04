@@ -105,7 +105,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Enemy" sid="1705739699570545">
+        <object-type name="RangedEnemy" sid="1705739699570545">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Bullet" sid="7243300966558883">
@@ -231,12 +231,13 @@
     <families>
         <family name="Enemies" plugin-id="Sprite" sid="7646709950686107">
             <members>
-                <member>Enemy</member>
+                <member>RangedEnemy</member>
                 <member>SuicideEnemy</member>
             </members>
             <instance-variables>
                 <instance-variable comment="The amount of Health an Enemy has1" name="Health" sid="6979612084018606" type="number" />
                 <instance-variable name="TintFrameCounter" sid="5859562172401079" type="number" />
+                <instance-variable comment="The amount of points this enemy is worth to the spawner" name="SpawnPointValue" sid="1989729775658284" type="number" />
             </instance-variables>
             <effects>
                 <effect-type name="Tint">

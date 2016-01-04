@@ -64,7 +64,7 @@
         <event-block sid="9181423861421662">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="55609241493948" type="Bullet">
-                    <param id="0" name="Object">Enemy</param>
+                    <param id="0" name="Object">RangedEnemy</param>
                 </condition>
             </conditions>
             <actions>
